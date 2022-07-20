@@ -1,0 +1,409 @@
+%%%%%%%%%%%%%%%%%
+% This is an sample CV template created using altacv.cls
+% (v1.6.4, 13 Nov 2021) written by LianTze Lim (liantze@gmail.com). Now compiles with pdfLaTeX, XeLaTeX and LuaLaTeX.
+%
+%% It may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2003/12/01 or later.
+%%%%%%%%%%%%%%%%
+
+%% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
+% \documentclass[10pt,a4paper,normalphoto]{altacv}
+
+\documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
+%% AltaCV uses the fontawesome5 and packages.
+%% See http://texdoc.net/pkg/fontawesome5 for full list of symbols.
+
+% Change the page layout if you need to
+\geometry{left=1.25cm,right=1.25cm,top=1.5cm,bottom=1.5cm,columnsep=1.2cm}
+
+% The paracol package lets you typeset columns of text in parallel
+\usepackage{paracol}
+
+% Adding this for flexibility
+%\usepackage{hyperref}
+%\usepackage[colorlinks]{hyperref}
+\usepackage{academicons}
+\usepackage{xcolor}
+
+
+% Change the font if you want to, depending on whether
+% you're using pdflatex or xelatex/lualatex
+\ifxetexorluatex
+  % If using xelatex or lualatex:
+  \setmainfont{Roboto Slab}
+  \setsansfont{Lato}
+  \renewcommand{\familydefault}{\sfdefault}
+\else
+  % If using pdflatex:
+  \usepackage[rm]{roboto}
+  \usepackage[defaultsans]{lato}
+  % \usepackage{sourcesanspro}
+  \renewcommand{\familydefault}{\sfdefault}
+\fi
+
+% Change the colours if you want to
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+\definecolor{DarkPastelRed}{HTML}{450808}
+\definecolor{PastelRed}{HTML}{8F0D0D}
+\definecolor{GoldenEarth}{HTML}{E7D192}
+\colorlet{name}{black}
+\colorlet{tagline}{PastelRed}
+\colorlet{heading}{DarkPastelRed}
+\colorlet{headingrule}{GoldenEarth}
+\colorlet{subheading}{PastelRed}
+\colorlet{accent}{PastelRed}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+% Change some fonts, if necessary
+\renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+\renewcommand{\personalinfofont}{\footnotesize}
+\renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
+\renewcommand{\cvsubsectionfont}{\large\bfseries}
+
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+
+%% Use (and optionally edit if necessary) this .cfg if you
+%% want to use an author-year reference style like APA(6)
+%% for your publication list
+\input{pubs-authoryear.cfg}
+
+%% Use (and optionally edit if necessary) this .cfg if you
+%% want an originally numerical reference style like IEEE
+%% for your publication list
+% \input{pubs-num.cfg}
+
+%% sample.bib contains your publications
+\addbibresource{sample.bib}
+
+\begin{document}
+\name{Federico Bianchini}
+\tagline{Principle Engineer / Data Steward}
+%% You can add multiple photos on the left or right
+%\photoR{2.8cm}{Globe_High}
+\photoR{2.5cm}{bilde.jpg}
+% \photoL{2.5cm}{Yacht_High,Suitcase_High}
+
+\personalinfo{%
+  % Not all of these are required!
+  \orcid{0000-0002-9016-4820}\\
+  \email{fredebi@uio.no}\\
+  \printinfo{\faGlobe}{webpage}[https://www.mn.uio.no/kjemi/english/people/aca/]\\
+  \github{bianchini88}\\
+  \printinfo{~\aiGoogleScholar~}{Scholar}[https://scholar.google.com/citations?user=K92o8rcAAAAJ&hl=en]\\
+  \printinfo{~\aiPublons~}{Publons}[https://publons.com/wos-op/researcher/1706853/federico-bianchini/]\\
+  \printinfo{\faLinkedin}{00700381}[https://www.linkedin.com/in/federico-bianchini-00700381/]\\
+
+  %% You can add your own arbitrary detail with
+  %% \printinfo{symbol}{detail}[optional hyperlink prefix]
+  % \printinfo{\faPaw}{Hey ho!}[https://example.com/]
+  %% Or you can declare your own field with
+  %% \NewInfoFiled{fieldname}{symbol}[optional hyperlink prefix] and use it:
+  % \NewInfoField{gitlab}{\faGitlab}[https://gitlab.com/]
+  % \gitlab{your_id}
+  %%
+  %% For services and platforms like Mastodon where there isn't a
+  %% straightforward relation between the user ID/nickname and the hyperlink,
+  %% you can use \printinfo directly e.g.
+  % \printinfo{\faMastodon}{@username@instace}[https://instance.url/@username]
+  %% But if you absolutely want to create new dedicated info fields for
+  %% such platforms, then use \NewInfoField* with a star:
+  % \NewInfoField*{mastodon}{\faMastodon}
+  %% then you can use \mastodon, with TWO arguments where the 2nd argument is
+  %% the full hyperlink.
+  % \mastodon{@username@instance}{https://instance.url/@username}
+}
+
+\makecvheader
+%% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+% \AtBeginEnvironment{itemize}{\small}
+
+%% Set the left/right column width ratio to 6:4.
+\columnratio{0.6}
+
+% Start a 2-column paracol. Both the left and right columns will automatically
+% break across pages if things get too long.
+\begin{paracol}{2}
+\cvsection{Experience}
+
+\cvevent{Principle Engineer / Data steward}{Centre for Bioinformatics}{October 2020 -- Ongoing}{University of Oslo, Norway}
+%\begin{itemize}
+%\item FAIR data management in the Life Sciences
+%\item Job description 2
+%\end{itemize}
+
+\divider
+
+\cvevent{Researcher}{Centre for Materials Science and Nanotechnology}{April 2020 -- September 2020}{University of Oslo, Norway}
+%\begin{itemize}
+%\item Atomistic modelling of materials -- nuclear magnetic resonance
+%\end{itemize}
+
+%\divider
+
+\cvevent{Postdoctoral Research Fellow}{Centre for Materials Science and Nanotechnology}{April 2020 -- September 2020}{University of Oslo, Norway}
+%\begin{itemize}
+%\item Atomistic modelling of ionic mobility in battery materials
+%\end{itemize}
+
+
+\cvsection{Projects}
+
+\cvevent{ELIXIR Norway}{FORINFRA-Nasj.sats. forskn.infrastrukt -- Norges forskningr\aa d}{April 2022--ongoing}{University of Oslo, Norway}
+\begin{itemize}
+\item FAIR data: technical implementation and competence building 
+\item ELIXIR Helpdesk: support for FAIR data management
+\item Data support for precision medicine (human health)
+\end{itemize}
+
+\divider
+
+\cvevent{BioMedData}{FORINFRA-Nasj.sats. forskn.infrastrukt -- Norges forskningr\aa d}{June 2020--ongoing}{University of Oslo, Norway}
+Bringing together 11 Norwegian infrastructures to promote best practices for data management in the Life Sciences.
+
+
+\divider
+
+\cvevent{ELIXIR CONVERGE}{Horizon 2020 -- European Commission}{February 2020--Ongoing}{University of Oslo, Norway}
+\begin{itemize}
+\item Training and competence building in data management 
+\item Development of a data management toolkit (\href{https://rdmkit.elixir-europe.org/}{\color{blue} RDMkit})
+\end{itemize}
+
+\divider
+
+%\cvevent{Life Science Data Management}{University of Oslo}{2019--Ongoing}{Centre for Bioinformatics, UiO}
+%Promoting adoption of best practises for data managment and FAIR data across different entites at the University of Oslo.
+
+\cvevent{Solid Electrolytes for Li and Na-ion Batteries (SELiNaB)}{ENERGIX-Stort program energi -- Norges forskningr\aa d}{2016 -- 2020}{University of Oslo, Norway}
+Theoretical investigation of Li and Na mobility in materials (Bianchini), synthesis and characterisation of samples (exp. partners). 
+
+
+\newpage
+
+\cvsection{Education}
+
+\cvevent{Ph.D.\ in Physics}{King's College London, UK}{October 2012 -- August 2016}{}
+\textbf{Thesis}: ``Mechanical Properties of Nickel-based Superalloys A Multiscale Atomistic Investigation''\\
+\textbf{Supervisor}: Prof. Alessandro De Vita
+\divider
+
+\cvevent{M.Sc.\ in Condensed Matter Physics}{University of Trieste, Italy}{October 2010 -- September 2012}{}
+\textbf{Thesis}: ``Graphene Growth on Ni(111) Surface: a First Principle Study''\\
+\textbf{Supervisor}: Prof: Maria Peressi\\
+\textbf{110/110 \textit{Summa cum laude}}
+
+
+\divider
+
+\cvevent{B.Sc.\ in Physics}{University of Trieste, Italy}{October 2007 -- September 2010}{}
+\textbf{Thesis}: ``A Path Integral Formulation of Classical Mechanics''\\
+\textbf{Supervisor}: Prof. Ennio Gozzi
+
+
+
+
+
+
+%\cvsection{A Day of My Life}
+
+% Adapted from @Jake's answer from http://tex.stackexchange.com/a/82729/226
+% \wheelchart{outer radius}{inner radius}{
+% comma-separated list of value/text width/color/detail}
+%\wheelchart{1.5cm}{0.5cm}{%
+%  6/8em/accent!30/{Sleep,\\beautiful sleep},
+%  3/8em/accent!40/Hopeful novelist by night,
+%  8/8em/accent!60/Daytime job,
+%  2/10em/accent/Sports and relaxation,
+%  5/6em/accent!20/Spending time with family
+%}
+
+% use ONLY \newpage if you want to force a page break for
+% ONLY the current column
+
+
+\cvsection{Publications}
+
+\nocite{*}
+
+%\printbibliography[heading=pubtype,title={\printinfo{\faBook}{Books}},type=book]
+
+%\divider
+
+\printbibliography[heading=pubtype,title={\printinfo{\faFile*[regular]}{Journal Articles (selected)}},type=article]
+
+\divider
+
+\printbibliography[heading=pubtype,title={\printinfo{\faCheck}{Project deliverables}},type=misc]
+
+\cvsection{Award}
+
+\cvevent{2020 PCCP outstanding peer reviewers}{Royal Society of Chemistry}{}{}
+For contributions (22 reviews) to \textit{Physical Chemistry Chemical Physics}
+
+
+
+%% Switch to the right column. This will now automatically move to the second
+%% page if the content is too long.
+\switchcolumn
+
+%\cvsection{My Life Philosophy}
+
+%\begin{quote}
+%``Something smart or heartfelt, preferably in one sentence.''
+%\end{quote}
+
+%\cvsection{Most Proud of}
+
+%\cvachievement{\faTrophy}{Fantastic Achievement}{and some details about it}
+
+%\divider
+
+%\cvachievement{\faHeartbeat}{Another achievement}{more details about it of course}
+
+%\divider
+
+%\cvachievement{\faHeartbeat}{Another achievement}{more details about it of course}
+
+\cvsection{Community}
+
+ELIXIR-related groups and projects:
+\begin{itemize}
+\item ELIXIR Norway
+\item FAIRtracks
+\item RDMkit editorial board
+\item The ELIXIR Interoperability Platform
+\item ELIXIR CONVERGE
+\item RDA activities focus group
+\end{itemize}
+
+\divider
+
+EOSC task force:
+\begin{itemize}
+\item Data Stewardship, curricula and career paths
+\end{itemize}
+
+\divider
+
+University of Oslo:
+\begin{itemize}
+\item Carpentry@UiO (helper)
+\item UiO Data Managers Network (board)
+\end{itemize}
+
+\cvsection{Proposal}
+\cvevent{Multiscale Atomistic Simulation of the Mechanical Behaviour of Nickel-based Superalloys}{8th PRACE Project Access Call}{2014}{London, UK}
+Awarded 15M core hours on machines at CINECA, Italy and 5M at JSC, Germany
+
+\cvsection{Strengths}
+
+\cvtag{Coordinator}
+\cvtag{Analytical}
+
+\divider
+
+\cvtag{Data management planning}
+\cvtag{FAIR data}
+
+\divider
+
+\cvtag{modelling}
+\cvtag{density functional theory}\\
+\smallskip
+\cvtag{metallurgy}
+\cvtag{catalysis}
+\cvtag{batteries}
+
+\divider
+
+
+\cvtag{python}
+\cvtag{Fortran}
+\cvtag{\TeX}
+\cvtag{git}
+
+\cvsection{Languages}
+
+\cvskill{Italian}{5}
+\divider
+
+\cvskill{English}{4.5}
+\divider
+
+\cvskill{Norwegian}{3} %% Supports X.5 values.
+
+%% Yeah I didn't spend too much time making all the
+%% spacing consistent... sorry. Use \smallskip, \medskip,
+%% \bigskip, \vspace etc to make adjustments.
+%\medskip
+
+\newpage
+
+\cvsection{Conferences}
+
+\cvevent{}{ELIXIR All-Hands 2021}{1--11 June 2021}{Virtual}
+\textbf{Talk}: “FAIRtracks: a general overview”\\
+part of the "Tooling up for FAIR'' workshop
+
+\divider
+
+\cvevent{}{Operando surface catalysis meeting}{Jan./Feb. 2019}{Oslo, Norway}
+\textbf{Talk}: “Adatom promoted growth of graphene on a Ni(111) substrate”
+
+\divider
+
+\cvevent{}{Modelling and simulation of superalloys}{March 2017}{Bochum, Germany}
+\textbf{Talk}: “QM/MM simulation of dislocation motion in Ni alloys.”
+
+
+\cvsection{Workshops}
+\cvevent{}{FAIR data management in the life sciences}{14--16 June 2022}{Virtual}
+\textbf{Role}: organiser\\
+\textbf{Contribution}: ``data management planning'' and ``metadata management'' lectures
+
+\divider
+
+\cvevent{}{Carpentry@UiO: Plotting and Programming with Python (Novices)}{1 June 2022}{University of Oslo}
+\textbf{Role}: helper
+
+\divider
+
+\cvevent{}{Nordic Train the Trainer course}{10-13 May 2022}{Virtual}
+\textbf{Role}: participant
+
+\divider
+
+\cvevent{}{Data Management Planning workshop\\ for Life Science projects}{4-5 April 2022}{Virtual}
+\textbf{Role}: organiser\\
+\textbf{Note}: workshop delivered 2/3 times per year, see \href{https://tess.elixir-europe.org/events?content_provider=Centre+for+Digital+Life+Norway&include_expired=true}{\color{blue}TeSS} for more details\\
+\textbf{Contributions}: ``Introduction to DSW'' demonstration, ``Controlled Vocabularies and Ontologies'' lecture, hands-on training\\
+
+
+
+\cvsection{Referees}
+
+% \cvref{name}{email}{mailing address}
+\cvref{Prof.\ Eivind Hovig}{Centre for Bioinformatics,\\
+  ~~University of Oslo, Norway}{ehovig@ifi.uio.no}{}
+
+\divider
+
+\cvref{Prof.\ Helmer Fjellv\aa g}{Department of Chemistry,\\
+  ~~University of Oslo, Norway}{helmer.fjellvag@kjemi.uio.no}{}
+
+
+\end{paracol}
+
+
+\end{document}
