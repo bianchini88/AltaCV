@@ -1,5 +1,10 @@
 # AltaCV, yet another LaTeX CV/Résumé class
 
+Note for this fork/branch (bianchini88)
+* academicons is added as some icons (including Google Scholar) are missing from font awesome
+* As a consequence, compulation required lualatex instead of pdflatex (xelatex should also be an option)
+
+
 v1.6.4 (13 Nov 2021), by LianTze Lim (liantze@gmail.com)
 
 * Starred `\NewInfoField*` command to handle Mastodon; Icons, `\cvskills`, `\wheelchart` have "copyable" text values; `\cvskill` supports numerical values {0.5, 1, ..., 4.5, 5} on 21 May 2021
