@@ -24,12 +24,8 @@
 % The paracol package lets you typeset columns of text in parallel
 \usepackage{paracol}
 
-% Adding this for flexibility
-%\usepackage{hyperref}
-%\usepackage[colorlinks]{hyperref}
-\usepackage{academicons}
-\usepackage{xcolor}
 
+\usepackage{academicons}
 
 % Change the font if you want to, depending on whether
 % you're using pdflatex or xelatex/lualatex
@@ -42,6 +38,8 @@
   % If using pdflatex:
   \usepackage[rm]{roboto}
   \usepackage[defaultsans]{lato}
+  \usepackage{biblatex}
+  \usepackage{hyperref}
   % \usepackage{sourcesanspro}
   \renewcommand{\familydefault}{\sfdefault}
 \fi
@@ -100,7 +98,7 @@
   \email{fredebi@uio.no}
   \printinfo{\faGlobe}{home}[https://www.mn.uio.no/kjemi/english/people/aca/]
   \github{bianchini88}
-  \printinfo{~\aiGoogleScholar~}{Scholar}[https://scholar.google.com/citations?user=K92o8rcAAAAJ&hl=en]
+  \printinfo{~\aiGoogleScholar~}{Scholar}[https://scholar.google.com/citations?user=K92o8rcAAAAJ\&hl=en]
   \printinfo{~\aiPublons~}{Publons}[https://publons.com/wos-op/researcher/1706853/federico-bianchini/]
   \printinfo{\faLinkedin}{00700381}[https://www.linkedin.com/in/federico-bianchini-00700381/]
 
@@ -222,9 +220,7 @@
 % ONLY the current column
 
 
-\cvsection{Publications}
-
-\nocite{*}
+\cvsection{Publications}\nocite{*}
 
 %\printbibliography[heading=pubtype,title={\printinfo{\faBook}{Books}},type=book]
 
